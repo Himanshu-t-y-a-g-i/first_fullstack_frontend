@@ -20,7 +20,6 @@ export const AddNewProd = () => {
         thumbnail: undefined,
         images: []
     });
-    console.log(prodStore)
     const handleChange = (e, type) => {
         const newObj = {
             ...newData

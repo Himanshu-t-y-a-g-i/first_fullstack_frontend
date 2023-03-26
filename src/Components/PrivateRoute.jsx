@@ -3,6 +3,8 @@ import { Navigate } from "react-router-dom";
 
 
 export const PrivateRoute = ({ children }) => {
+    console.log(children.type.name);
+    console.log(children);
     const store = useSelector(store => store.authReducer);
     if (store.role === "admin" && children.type.name === "Admin" && store.isAuth === true) {
         return children;

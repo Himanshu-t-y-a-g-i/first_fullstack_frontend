@@ -64,7 +64,7 @@ export const postProductAct = (token, payload, setStatus) => (dispatch) => {
 
 export const updateProductAct = (token, payload, id) => (dispatch) => {
     dispatch(productRequest());
-    axios.patch(`${process.env.REACT_APP_URL_API}/${id}`, payload, {
+    axios.patch(`${process.env.REACT_APP_URL_API}/update/${id}`, payload, {
         headers: { token }
     }).then(res => {
         dispatch(updateProduct(res.data));
@@ -75,7 +75,7 @@ export const updateProductAct = (token, payload, id) => (dispatch) => {
 
 export const deleteProductAct = (token, id) => dispatch => {
     dispatch(productRequest());
-    axios.delete(`${process.env.REACT_APP_URL_API}/${id}`, {
+    axios.delete(`${process.env.REACT_APP_URL_API}/delete/${id}`, {
         headers: { token }
     }).then(res => {
         dispatch(deleteProduct(res.data));

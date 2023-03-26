@@ -14,10 +14,10 @@ export const PrivateRoute = ({ children }) => {
     if ((store.role === "admin" || store.role === "seller") && (children.type.name === "ProductEdit" || children.type.name === "hc") && store.isAuth === true) {
         return children;
     }
-    if ((store.role === "admin" || store.role === "seller") && children.type.name === "SingleProductEdit" && store.isAuth === true) {
+    if ((store.role === "admin" || store.role === "seller") && (children.type.name === "SingleProductEdit" || children.type.name === "Vc") && store.isAuth === true) {
         return children;
     }
-    if ((store.role === "admin" || store.role === "seller") && children.type.name === "AddNewProd" && store.isAuth === true) {
+    if ((store.role === "admin" || store.role === "seller") && (children.type.name === "AddNewProd" || children.type.name === "mu") && store.isAuth === true) {
         return children;
     }
     return <Navigate to={"/login"} />

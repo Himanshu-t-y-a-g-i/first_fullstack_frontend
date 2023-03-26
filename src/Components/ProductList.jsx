@@ -23,9 +23,10 @@ export const ProductList = () => {
             console.log(e.message);
         }
     }, [])
-    for (let i = 1; i <= Math.floor(total / limit); i++) {
+    for (let i = 1; i <= Math.ceil(total / limit); i++) {
         buttons.push(i);
     }
+    console.log(total/limit, total,limit,  buttons)
     if (prodStore.isLoading) {
         return (
             <VStack align={"center"} m={"20vh auto"} width={"40%"} >

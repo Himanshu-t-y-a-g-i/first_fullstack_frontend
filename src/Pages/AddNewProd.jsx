@@ -29,6 +29,18 @@ export const AddNewProd = () => {
     }
     const handleClick = () => {
         dispatch(postProductAct(authStore.token, newData, setStatus));
+        setNewData({
+            title: undefined,
+            description: undefined,
+            price: undefined,
+            discountPercentage: undefined,
+            rating: undefined,
+            stock: undefined,
+            brand: undefined,
+            category: undefined,
+            thumbnail: undefined,
+            images: []
+        })
     }
     return (
         <Box p={"40px 0px"}>
@@ -68,7 +80,7 @@ export const AddNewProd = () => {
                     <Input type={"url"} value={newData.thumbnail} onChange={e => handleChange(e, "thumbnail")} />
                     {/* <FormLabel>Images</FormLabel>
                 <Input type={"url"} value={newData.} onChange={ } /> */}
-                    <Button width={"100%"} onClick={handleClick}>Update</Button>
+                    <Button width={"100%"} onClick={handleClick}>Add product</Button>
                 </VStack>
             </FormControl>
         </Box>

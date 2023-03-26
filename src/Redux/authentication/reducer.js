@@ -21,7 +21,7 @@ export const reducer = (state = initState, { type, payload }) => {
         case REGISTER:
             return { ...state, isLoading: false, isError: false, response: payload };
         case LOGOUT:
-            return { ...state, isLoading: false, isError: false, response: "", isAuth: false };
+            return { ...state, isLoading: false, isError: false, response: "",, role: "", isAuth: false };
         case LSTOKEN:
             return { ...state, isLoading: false, isError: false, isAuth: payload.isAuth, token: payload.token, role: payload.role.role };
         default:
